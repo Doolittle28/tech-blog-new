@@ -1,0 +1,57 @@
+<section>
+      <!-- Main page content-->
+    <div class="container-xl px-4">
+
+        <!-- Page title -->
+        <h2 class="mb-0 mt-5">Dashboard</h2>
+        <hr class="mt-2 mb-4" />
+       
+        <div class="card mt-4">
+            <div class="card-body">
+                
+                <form id="create-post">
+
+                    <h2>Create New Post</h2>
+
+                    <div class="mb-3">
+                        <label class="label post-title">Title</label>
+                        <textarea class="form-control" placeholder="Title" id="title" name="title"></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="label">Content</label>
+                        <textarea class="form-control" placeholder="Content" id="content" name="content"></textarea>
+                    </div>
+
+                    <input class="btn btn-primary w-100" type="submit" value="Create Post">
+                    
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
+
+</section>
+
+{{#if posts.length}}
+<section>
+    <div class="container-xl px-4">
+        <!-- Knowledge base category-->
+        <h2 class="mb-0 mt-5">Your Post</h2>
+        <hr class="mt-2 mb-4">
+
+        <!-- Knowledge base item-->
+        {{#each posts as |post|}}
+        
+            {{> post-info}}
+            
+        {{/each}}
+                    
+    </div>
+</section>
+{{/if}}
+
+
+<script src="/js/create-post.js"></script>
